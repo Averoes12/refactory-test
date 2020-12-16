@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:refactory_test/main/feature/home/bloc/home_bloc.dart';
 import 'package:refactory_test/main/feature/home/bloc/partner/partner_bloc.dart';
+import 'package:refactory_test/main/feature/home/bloc/see_on/see_on_bloc.dart';
 import 'package:refactory_test/main/main-screen.dart';
 
 void main() async {
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<HomeBloc>(
           create: (BuildContext context) => HomeBloc(),
+        ),
+        BlocProvider<SeeOnBloc>(
+          create: (BuildContext context) => SeeOnBloc(),
         ),
       ],
       child: MaterialApp(
