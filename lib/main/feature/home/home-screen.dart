@@ -7,6 +7,8 @@ import 'package:refactory_test/main/feature/home/bloc/partner/partner_bloc.dart'
 import 'package:refactory_test/main/feature/home/bloc/see_on/see_on_bloc.dart';
 import 'package:refactory_test/repo/api-repository.dart';
 
+import '../webview-screen.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -119,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Container(
                             child: Text("As Seen On",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 20,
                               fontWeight: FontWeight.w500
                             ),
                             ),
@@ -136,9 +138,15 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       floatingActionButton: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context, MaterialPageRoute(
+            builder: (context) => WebViewScreen(title: "WhatsApp", url: "https://api.whatsapp.com/send?phone=6281228203381&text=Halo%20team%20Refactory.%20Saya%20memiliki%20beberapa%20pertanyaan,%20apakah%20bisa%20di%20bantu?")
+          ));
+        },
         child: Container(
-          height: 40,
-          width: 40,
+          height: 50,
+          width: 50,
           child: SvgPicture.network("https://www.flaticon.com/svg/static/icons/svg/220/220236.svg",
             semanticsLabel: "Contact",
             placeholderBuilder: (context) => Icon(Icons.error),
@@ -180,33 +188,39 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          padding: EdgeInsets.only(top: 16, left: 8, right: 8),
+          padding: EdgeInsets.only(top: 16, left: 16, right: 16),
           child: Text("${state.homeModel.slogan}",
             softWrap: true,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 24,
               fontWeight: FontWeight.w500,
               color: Colors.white
             ),
           ),
         ),
         Container(
-          padding:EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+          padding:EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
           child: Text("${state.homeModel.corpDesc}",
             softWrap: true,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 20,
               color: Colors.white
             ),
           ),
         ),
         GestureDetector(
+          onTap: (){
+            Navigator.push(
+                context, MaterialPageRoute(
+                builder: (context) => WebViewScreen(title: "Contact", url: "https://refactory.id/contact/"))
+            );
+          },
           child: Container(
             margin: EdgeInsets.all(8),
             padding: EdgeInsets.all(8),
-            width: 150,
+            width: 200,
             decoration: BoxDecoration(
               color: Colors.amber,
               borderRadius: BorderRadius.all(Radius.circular(15))
@@ -216,16 +230,23 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 12
+                fontSize: 18
               ),
             ),
           ),
         ),
         GestureDetector(
+          onTap: (){
+            Navigator.push(
+                context, MaterialPageRoute(
+                builder: (context) => WebViewScreen(title: "Course", url: "https://enroll.refactory.id/?_ga=2.259523530.1742395417.1608015571-485100777.1608015571")
+              )
+            );
+          },
           child: Container(
             margin: EdgeInsets.only(bottom: 16),
             padding: EdgeInsets.all(8),
-            width: 150,
+            width: 200,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.amber, width: 1, style: BorderStyle.solid),
               borderRadius: BorderRadius.all(Radius.circular(15))
@@ -235,7 +256,7 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 12
+                fontSize: 18
               ),
             ),
           ),
@@ -246,14 +267,14 @@ class _HomeScreenState extends State<HomeScreen> {
             softWrap: true,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 16,
+                fontSize: 20,
                 fontWeight: FontWeight.w500,
                 color: Colors.white
             ),
           ),
         ),
         Container(
-          height: 100,
+          height: 150,
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width,
           child: BlocBuilder<PartnerBloc, PartnerState>(
@@ -294,8 +315,8 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: state.listPartner.map((item) {
         return Container(
-          height: 48,
-          width: 48,
+          height: 100,
+          width: 100,
           margin: EdgeInsets.all(8),
           decoration: BoxDecoration(
               image: DecorationImage(
@@ -320,7 +341,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Text("What's Refactory Can Help ?",
             style: TextStyle(
                 fontWeight: FontWeight.w500,
-                fontSize: 18
+                fontSize: 20
             ),
           ),
         ),
@@ -331,8 +352,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      height: 30,
-                      width: 30,
+                      height: 40,
+                      width: 40,
                       margin: EdgeInsets.only(bottom: 16, top: 16),
                       child: Image.network("${item.logo}")),
                     Container(
@@ -341,14 +362,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         softWrap: true,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500
                         ),
                       ),
                     ),
                     Container(
                       padding: EdgeInsets.only(bottom: 16) ,
-                      child: Text("${item.desc}"),
+                      child: Text("${item.desc}",
+                        style: TextStyle(
+                          fontSize: 16
+                        ),
+                      ),
                     )
                   ],
                 ),

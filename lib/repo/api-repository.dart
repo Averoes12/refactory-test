@@ -104,7 +104,7 @@ class ApiRepository {
   Future<DetailCourseModel> getDetailCourse() async {
     DetailCourseModel detailCourseModel;
     try{
-      await dio.get("$cusUrl/course.json").then((value) {
+      await dio.get("$baseUrl/detail-course.json").then((value) {
         detailCourseModel = DetailCourseModel.fromJson(jsonDecode(value.data));
       }).catchError((e) => print("Error Detail Course : $e"));
       print("Detail Course Model : $detailCourseModel");

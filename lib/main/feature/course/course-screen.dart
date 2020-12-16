@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:refactory_test/main/feature/course/bloc/course/course_bloc.dart';
 import 'package:refactory_test/main/feature/course/bloc/list_course/list_course_bloc.dart';
 import 'package:refactory_test/main/feature/course/bloc/review/review_bloc.dart';
+import 'package:refactory_test/main/feature/course/detail_course-screen.dart';
 
 class CourseScreen extends StatefulWidget {
   @override
@@ -83,12 +84,13 @@ class _CourseScreenState extends State<CourseScreen> {
                   margin: EdgeInsets.all(16),
                   child: Text("Alumni Review",
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.w500
                     ),
                   ),
                 ),
                 Container(
+                  height: MediaQuery.of(context).size.height * 0.80,
                   width: MediaQuery.of(context).size.width,
                   child: BlocBuilder<ReviewBloc, ReviewState>(
                     builder: (context, state){
@@ -107,7 +109,16 @@ class _CourseScreenState extends State<CourseScreen> {
                 ),
                 SizedBox(height: 16,),
                 Container(
-                  height: 200,
+                  margin: EdgeInsets.all(24),
+                  child: Text("List Course",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500
+                    ),
+                  ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.45,
                   margin: EdgeInsets.only(bottom: 16),
                   width: MediaQuery.of(context).size.width,
                   child: BlocBuilder<ListCourseBloc, ListCourseState>(
@@ -169,12 +180,12 @@ class _CourseScreenState extends State<CourseScreen> {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.only(top: 16, left: 8, right: 8),
+          padding: EdgeInsets.only(top: 16, left: 16, right: 16),
           child: Text("${state.courseModel.slogan}",
             softWrap: true,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 18,
+                fontSize: 24,
                 fontWeight: FontWeight.w500,
                 color: Colors.white
             ),
@@ -182,12 +193,12 @@ class _CourseScreenState extends State<CourseScreen> {
         ),
         SizedBox(height: 24,),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
           child: Text("${state.courseModel.desc}",
             softWrap: true,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 14,
+                fontSize: 20,
                 color: Colors.white
             ),
           ),
@@ -195,18 +206,22 @@ class _CourseScreenState extends State<CourseScreen> {
         Column(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal : 16, vertical: 16),
-              child: Text("How Refactory Course help you to upgrading your skill.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 18
-                ),
+              child: Column(
+                children: [
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal : 16, vertical: 16),
+                    child: Text("How Refactory Course help you to upgrading your skill.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20
+                      ),
+                    ),
+                  ),
+                  Image.network("https://gitlab.com/Daffaal/data-json/-/raw/master/Frame.png"),
+                ],
               ),
-            ),
-            Container(
-              child: Image.network("https://gitlab.com/Daffaal/data-json/-/raw/master/Frame.png"),
             ),
             Container(
               color: Colors.grey.withOpacity(0.8),
@@ -229,7 +244,7 @@ class _CourseScreenState extends State<CourseScreen> {
               child: Text("${state.courseModel.titleDesc}",
                 softWrap: true,
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.w500,
                     color: Colors.white
                 ),
@@ -241,7 +256,7 @@ class _CourseScreenState extends State<CourseScreen> {
               child: Text("${state.courseModel.descCourse}",
                 softWrap: true,
                 style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 18,
                     color: Colors.white
                 ),
               ),
@@ -261,7 +276,7 @@ class _CourseScreenState extends State<CourseScreen> {
       itemCount: state.reviewModel.length,
       itemBuilder: (context, index) =>
         Container(
-          height: MediaQuery.of(context).size.height * 0.80,
+          width: MediaQuery.of(context).size.width * 0.70,
           margin: EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -292,7 +307,7 @@ class _CourseScreenState extends State<CourseScreen> {
                       child: Text("${state.reviewModel[index].user.name}",
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.w400
                         ),
                       ),
@@ -303,7 +318,7 @@ class _CourseScreenState extends State<CourseScreen> {
                         textAlign: TextAlign.start,
                         style: TextStyle(
                             color: Colors.grey,
-                            fontSize: 14,
+                            fontSize: 16,
                             fontWeight: FontWeight.w500
                         ),
                       ),
@@ -324,19 +339,18 @@ class _CourseScreenState extends State<CourseScreen> {
                       child: Text("${state.reviewModel[index].title}",
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500
                         ),
                       ),
                     ),
                     Container(
-                      width: 230,
                       margin: EdgeInsets.only(left: 2,top: 8, right: 2),
                       child: Text("${state.reviewModel[index].description}",
                         textAlign: TextAlign.start,
                         softWrap: true,
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 16,
                             fontWeight: FontWeight.w400
                         ),
                       ),
@@ -359,8 +373,13 @@ class _CourseScreenState extends State<CourseScreen> {
       itemCount: state.listCourseModel.length -1,
       itemBuilder: (context, index) =>
         GestureDetector(
-
+          onTap: (){
+            Navigator.push(
+              context, MaterialPageRoute(builder: (context) => DetailCourseScreen())
+            );
+          },
           child: Container(
+            width: MediaQuery.of(context).size.width * 0.70,
             margin: EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -382,8 +401,18 @@ class _CourseScreenState extends State<CourseScreen> {
                 ),
                 SizedBox(height: 8,),
                 Container(
-                  margin: EdgeInsets.only(left: 2,top: 8),
+                  margin: EdgeInsets.only(left: 16,top: 8),
                   child: Text("${state.listCourseModel[index].title}",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 16, right: 16,top: 8),
+                  child: Text("${state.listCourseModel[index].shortDescription}",
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         fontSize: 16,
@@ -391,6 +420,36 @@ class _CourseScreenState extends State<CourseScreen> {
                     ),
                   ),
                 ),
+                Container(
+                  height: 100,
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 8,top: 8),
+                        child: Text("${state.listCourseModel[index].user.name}",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: NetworkImage("${state.listCourseModel[index].user.photoUrl}"),
+                            fit: BoxFit.cover
+                          )
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:refactory_test/main/feature/course/bloc/course/course_bloc.dart';
+import 'package:refactory_test/main/feature/course/bloc/detail_course/detail_course_bloc.dart';
 import 'package:refactory_test/main/feature/course/bloc/review/review_bloc.dart';
 import 'package:refactory_test/main/feature/home/bloc/home_bloc.dart';
 import 'package:refactory_test/main/feature/home/bloc/partner/partner_bloc.dart';
@@ -38,6 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<ListCourseBloc>(
           create: (BuildContext context) => ListCourseBloc(),
+        ),
+        BlocProvider<DetailCourseBloc>(
+          create: (BuildContext context) => DetailCourseBloc(),
         ),
       ],
       child: MaterialApp(

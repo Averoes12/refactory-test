@@ -36,7 +36,7 @@ dependencies:
   hydrated_bloc :
   flutter_svg: ^0.19.2+1
   flutter_rating_bar: ^3.2.0+1
-
+  webview_flutter: ^1.0.7
 
 dev_dependencies:
   flutter_test:

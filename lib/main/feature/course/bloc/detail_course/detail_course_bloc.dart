@@ -1,41 +1,35 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:refactory_test/model/detailcourse-model.dart';
+import 'package:refactory_test/repo/api-repository.dart';
 
 part 'detail_course_event.dart';
 
 part 'detail_course_state.dart';
 
-class DetailCourseBloc extends HydratedBloc<DetailCourseEvent, DetailCourseState> {
+class DetailCourseBloc extends Bloc<DetailCourseEvent, DetailCourseState> {
   DetailCourseBloc() : super(InitialDetailCourseState());
 
   @override
-  DetailCourseState get initialState => InitialDetailCourseState();
-
-  @override
-  Stream<DetailCourseState> mapEventToState(DetailCourseEvent event) async* {
-    // TODO: Add your event logic
+  Stream<DetailCourseState> mapEventToState(
+      DetailCourseEvent event
+      ) async* {
+      if(event is GetDetailCourse){
+        yield* getDetailCourseData();
+      }
   }
 
   Stream<DetailCourseState> getDetailCourseData() async* {
-    
-  }
-
-  @override
-  DetailCourseState fromJson(Map<String, dynamic> json) {
-    var parsed = json['detailCourse'];
-    var detailCourseData = DetailCourseModel.fromJson(parsed);
-    return DetailCourseSuccess(detailCourseModel: detailCourseData);
-  }
-
-  @override
-  Map<String, dynamic> toJson(DetailCourseState state) {
-    if(state is DetailCourseSuccess){
-        return {
-          "detailCourse" : state.detailCourseModel
-        };
+    ApiRepository apiRepository = ApiRepository();
+    yield DetailCourseLoading();
+    try{
+      DetailCourseModel detailCourseData = await apiRepository.getDetailCourse();
+      yield DetailCourseSuccess(detailCourseModel: detailCourseData);
+      print("Detail Course Data : ${detailCourseData.toJson()}");
+    }catch (e){
+      yield DetailCourseError(errMessage: e);
     }
-    return null;
   }
 }
