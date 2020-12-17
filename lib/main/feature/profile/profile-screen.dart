@@ -30,13 +30,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
   getProfileImage() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var profilePath = prefs.getString("profile");
-    FirebaseStorage.instance
-        .ref()
-        .child('profile/$profilePath').getDownloadURL().then((url){
-          setState(() {
-            profileUrl = url;
-          });
-    });
+    if(profilePath != null){
+      FirebaseStorage.instance
+          .ref()
+          .child('profile/$profilePath').getDownloadURL().then((url){
+        setState(() {
+          profileUrl = url;
+        });
+      });
+    }
   }
   @override
   Widget build(BuildContext context) {
