@@ -142,7 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
-                            color: Colors.black
+                            color: Colors.black.withOpacity(0.6)
                         )
                     ),
                   ),
@@ -165,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
-                            color: Colors.black
+                            color: Colors.black.withOpacity(0.6)
                         )
                     ),
                   ),

@@ -153,7 +153,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 8),
+                  padding: EdgeInsets.only(left: 8, right: 8,bottom: 8),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all()
@@ -161,6 +161,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: TextField(
                     controller: username,
                     cursorColor: Colors.black,
+                    maxLength: 12,
                     decoration: InputDecoration(
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
@@ -168,7 +169,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       hintStyle: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 18,
-                        color: Colors.black
+                        color: Colors.black.withOpacity(0.6)
                       )
                     ),
                   ),
@@ -236,7 +237,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         hintStyle: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
-                            color: Colors.black
+                            color: Colors.black.withOpacity(0.6)
                         )
                     ),
                   ),
@@ -259,7 +260,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         hintStyle: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
-                            color: Colors.black
+                            color: Colors.black.withOpacity(0.6)
                         )
                     ),
                   ),
