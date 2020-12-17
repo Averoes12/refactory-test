@@ -19,6 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: allNavigation.length,
+      initialIndex: 1,
       child: Scaffold(
         body: TabBarView(
           children: [

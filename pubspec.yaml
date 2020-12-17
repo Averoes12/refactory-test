@@ -42,7 +42,7 @@ dependencies:
   firebase_core: ^0.5.3
   fluttertoast: ^7.1.1
   shared_preferences: ^0.5.8
-
+  flutter_open_whatsapp: ^0.1.2
 
 dev_dependencies:
   flutter_test:

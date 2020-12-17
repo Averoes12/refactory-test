@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:refactory_test/main/feature/home/bloc/home_bloc.dart';
 import 'package:refactory_test/main/feature/home/bloc/partner/partner_bloc.dart';
@@ -139,10 +141,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: GestureDetector(
         onTap: (){
-          Navigator.push(
-              context, MaterialPageRoute(
-            builder: (context) => WebViewScreen(title: "WhatsApp", url: "https://api.whatsapp.com/send?phone=6281228203381&text=Halo%20team%20Refactory.%20Saya%20memiliki%20beberapa%20pertanyaan,%20apakah%20bisa%20di%20bantu?")
-          ));
+          FlutterOpenWhatsapp.sendSingleMessage(
+              "6281228203381", "Halo team Refactory.\nSaya memiliki beberapa pertanyaan, apakah bisa di bantu?"
+          );
         },
         child: Container(
           height: 50,
