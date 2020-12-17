@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:refactory_test/main/feature/course/course-screen.dart';
 import 'package:refactory_test/main/feature/home/home-screen.dart';
+import 'package:refactory_test/main/feature/profile/profile-screen.dart';
 import 'package:refactory_test/main/navigation.dart';
 
 class MainScreen extends StatefulWidget {
@@ -21,8 +22,9 @@ class _MainScreenState extends State<MainScreen> {
       child: Scaffold(
         body: TabBarView(
           children: [
-            HomeScreen(),
             CourseScreen(),
+            HomeScreen(),
+            ProfileScreen(),
           ],
         ),
         bottomNavigationBar: TabBar(

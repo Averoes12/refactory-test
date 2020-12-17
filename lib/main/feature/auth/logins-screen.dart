@@ -50,7 +50,9 @@ class _LoginScreenState extends State<LoginScreen> {
           }).catchError((error) => print("Error => $error"));
            return counterEmail;
         });
-        showToast("You have logged in with email : ${login['email']} $counter times", Toast.LENGTH_LONG);
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("email", login['email']);
+        showToast("You have logged in with email : ${login['email']} ${counter - 1} times", Toast.LENGTH_LONG);
         Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) => MainScreen()
         ));

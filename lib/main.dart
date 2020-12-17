@@ -10,6 +10,7 @@ import 'package:refactory_test/main/feature/course/bloc/review/review_bloc.dart'
 import 'package:refactory_test/main/feature/home/bloc/home_bloc.dart';
 import 'package:refactory_test/main/feature/home/bloc/partner/partner_bloc.dart';
 import 'package:refactory_test/main/feature/home/bloc/see_on/see_on_bloc.dart';
+import 'package:refactory_test/main/feature/profile/bloc/profile_bloc.dart';
 import 'package:refactory_test/main/main-screen.dart';
 
 import 'main/feature/course/bloc/list_course/list_course_bloc.dart';
@@ -46,6 +47,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<DetailCourseBloc>(
           create: (BuildContext context) => DetailCourseBloc(),
+        ),
+        BlocProvider<ProfileBloc>(
+          create: (BuildContext context) => ProfileBloc(),
         ),
       ],
       child: MaterialApp(

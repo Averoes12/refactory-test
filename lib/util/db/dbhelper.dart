@@ -54,17 +54,18 @@ class DbHelper {
     print("updated count : $res");
     return res;
   }
-  Future getUser(String email) async {
-    var dbClient = await database;
-    var res = await dbClient.rawQuery("SELECT email FROM auth WHERE email = '$email'");
-    print("Email : ${res[0]['email']}");
-    return res;
-  }
 
   Future loginUser(String email, String password) async {
     var dbClient = await database;
     var res = await dbClient.rawQuery("SELECT email, password FROM auth WHERE email = ? AND password = ?", [email, password]);
     print("Login => $res");
+    return res;
+  }
+
+  Future getUserData(String email) async{
+    var dbClient = await database;
+    var res = await dbClient.rawQuery("SELECT * FROM auth WHERE email = ?", [email]);
+    print("User Data => $res");
     return res;
   }
 }

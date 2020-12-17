@@ -8,6 +8,7 @@ class Navigation {
 
 }
 const List<Navigation> allNavigation = <Navigation> [
+  Navigation('Course', Icons.menu_book),
   Navigation('Home', Icons.home),
-  Navigation('Course', Icons.menu_book)
+  Navigation('Profile', Icons.person),
 ];
