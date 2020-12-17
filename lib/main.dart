@@ -1,6 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:refactory_test/main/feature/auth/logins-screen.dart';
+import 'package:refactory_test/main/feature/auth/register-screen.dart';
 import 'package:refactory_test/main/feature/course/bloc/course/course_bloc.dart';
 import 'package:refactory_test/main/feature/course/bloc/detail_course/detail_course_bloc.dart';
 import 'package:refactory_test/main/feature/course/bloc/review/review_bloc.dart';
@@ -14,6 +17,7 @@ import 'main/feature/course/bloc/list_course/list_course_bloc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage = await HydratedStorage.build();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -50,7 +54,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: MainScreen(),
+        home: LoginScreen(),
       ),
     );
   }

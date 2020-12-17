@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "893325670913",
+    "firebase_url": "https://my-application-f751a.firebaseio.com",
+    "project_id": "my-application-f751a",
+    "storage_bucket": "my-application-f751a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893325670913:android:b3914404efd166a2c95e00",
+        "android_client_info": {
+          "package_name": "com.averoes.notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893325670913-6pal8qfp3rplckgb5rle35i7csljig27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyquVAG_daQVj3y6AAxE-nn_ln1xk3VU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893325670913-6pal8qfp3rplckgb5rle35i7csljig27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893325670913:android:df82042b78360804c95e00",
+        "android_client_info": {
+          "package_name": "com.averoes.refactory_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893325670913-6pal8qfp3rplckgb5rle35i7csljig27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyquVAG_daQVj3y6AAxE-nn_ln1xk3VU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893325670913-6pal8qfp3rplckgb5rle35i7csljig27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893325670913:android:d4ef54df29a0626ac95e00",
+        "android_client_info": {
+          "package_name": "id.co.education.smkdevapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893325670913-iq9mb0djejt07cto5o4off3apptsu3kq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.education.smkdevapp",
+            "certificate_hash": "53e1457df98fe57ebd721157ee78c4565e4fb937"
+          }
+        },
+        {
+          "client_id": "893325670913-6pal8qfp3rplckgb5rle35i7csljig27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyquVAG_daQVj3y6AAxE-nn_ln1xk3VU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893325670913-6pal8qfp3rplckgb5rle35i7csljig27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
