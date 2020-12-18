@@ -1,16 +1,33 @@
 # refactory_test
 
 An Application for following RSP test
+<hr>
+## Introduction
 
-## Getting Started
+This app is about landing page of [Refactory](https://refactory.id/) replication. There is Home , Course and Simple Profile screen.
+You can also register and login, and you can upload your best picture in the register form and will be displayed in Simple profile screen
 
-This project is a starting point for a Flutter application.
+## Screenshot
 
-A few resources to get you started if this is your first Flutter project:
+#### Home
+<img src="https://gitlab.com/Daffaal/data-json/-/raw/master/screenshot/Screenshot_20201217-235317.png" alt="home" width="200" height="300">
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+#### Course
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://gitlab.com/Daffaal/data-json/-/raw/master/screenshot/Screenshot_20201217-235329.png" alt="home" width="200" height="300"> <img src="https://gitlab.com/Daffaal/data-json/-/raw/master/screenshot/Screenshot_20201218-000757.png" alt="home" width="200" height="300"> <img src="https://gitlab.com/Daffaal/data-json/-/raw/master/screenshot/Screenshot_20201218-000809.png" alt="home" width="200" height="300">
+
+#### Simple Profile
+
+<img src="https://gitlab.com/Daffaal/data-json/-/raw/master/Screenshot_20201217-235337.png" alt="home" width="200" height="300">
+
+#### Authentication
+
+<img src="https://gitlab.com/Daffaal/data-json/-/raw/master/Screenshot_20201217-235355.png" alt="home" width="200" height="300"> <img src="https://gitlab.com/Daffaal/data-json/-/raw/master/Screenshot_20201217-235403.png" alt="home" width="200" height="300">
+<hr>
+### Download 
+
+For download this application, you can visit this [link](https://drive.google.com/file/d/16eqyrAJpKhe8D3pyL4h1EemEg1N29LbG/view?usp=sharing)
+
+
+
+
